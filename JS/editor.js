@@ -208,8 +208,6 @@ function insertText (newText = '', wh = edt, pos = getCursorPos()) {
 
     };
 
-
-
 });
 
 
