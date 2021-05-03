@@ -14,13 +14,13 @@ const _actionFuncs = {
     bold: (txt = 'BOLD') => {
         const _t = txt.match(/^\_\_(.*?)\_\_$/);
     
-        if (_t && _t.length == 2) {
+        if (_t && _t.length === 2) {
             return _t[1];
         };
     
         const __t = txt.match(/^\*\*(.*?)\*\*$/);
     
-        if (__t && __t.length == 2) {
+        if (__t && __t.length === 2) {
             return __t[1];
         };
     
@@ -29,13 +29,13 @@ const _actionFuncs = {
     italicize: (txt = 'ITALIC') => {
         const _t = txt.match(/^\_([^\*])\_$/);
     
-        if (_t && _t.length == 2) {
+        if (_t && _t.length === 2) {
             return _t[1];
         };
     
         const __t = txt.match(/^\*([^\*])\*$/);
     
-        if (__t && __t.length == 2) {
+        if (__t && __t.length === 2) {
             return __t[1];
         };
     
@@ -44,7 +44,7 @@ const _actionFuncs = {
     strike: (txt = 'STRIKE') => {
         const _t = txt.match(/^\~\~(.*?)\~\~$/);
     
-        if (_t && _t.length == 2) {
+        if (_t && _t.length === 2) {
             return _t[1];
         };
     
@@ -53,7 +53,7 @@ const _actionFuncs = {
     quote: (txt = 'BLOCKQUOTE') => {
         const _t = txt.match(/^\>(.*?)\n\n$/sm);
     
-        if (_t && _t.length == 2) {
+        if (_t && _t.length === 2) {
             return _t[1].replace(/^\s*/, '');
         };
     
@@ -64,7 +64,7 @@ const _actionFuncs = {
         if (ml) {
             const _t = txt.match(/\`\`\`\n(.*?)\n\`\`\`/sm);
     
-            if (_t && _t.length == 2) {
+            if (_t && _t.length === 2) {
                 return _t[1];
             };
     
@@ -73,7 +73,7 @@ const _actionFuncs = {
         } else {
             const __t = txt.match(/^\`(.*?)\`$/);
     
-            if (__t && __t.length == 2) {
+            if (__t && __t.length === 2) {
                 return __t[1];
             };
     
@@ -102,6 +102,41 @@ const _actionFuncs = {
         };
     
         return mI(txt);
+    },
+    case: (txt = '', cs = 0) => {
+        /* 
+        upper     -  0
+        lower     -  1
+        title     -  2
+        sentence  -  3
+        */
+        let text;
+
+        const capitalize = (t = '') => t === ''? '':`${t[0].toUpperCase()}${t.substring(1).toLowerCase()}`;
+
+        switch (cs) {
+            case 0:
+                text = txt.toUpperCase();
+                break;
+            
+            case 1:
+                text = txt.toLowerCase();
+                break;
+            
+            case 2:
+                text = txt.split(' ').map((w) => capitalize(w)).join(' ');
+                break;
+
+            case 3:
+                text = txt.split('. ').map((w) => capitalize(w)).join('. ');
+                break;
+
+            default:
+                text = txt;
+                break;
+        };
+
+        return text;
     }
 };
 
@@ -115,12 +150,16 @@ const _actions = new Map ([
     ['s-code', ((txt = '') => _actionFuncs.code(txt, false))],
     ['bullets', ((txt = '') => _actionFuncs.list(txt))],
     ['numbers', ((txt = '') => _actionFuncs.list(txt, true))],
+    ['case-u', ((txt = '') => _actionFuncs.case(txt, 0))],
+    ['case-l', ((txt = '') => _actionFuncs.case(txt, 1))],
+    ['case-t', ((txt = '') => _actionFuncs.case(txt, 2))],
+    ['case-s', ((txt = '') => _actionFuncs.case(txt, 3))],
     ['link', '[Text](link title)'],
     ['image', '![altText](src title)'],
     ['line', '- - -\n']
 ].concat(Array.from(Array(6), (_, i) => ++i).map((h) => {
     return [`h${h}`, ((txt = '') => _actionFuncs.header(txt, h))];
-})))
+})));
 // last line adds h1 - h6 progmatically
 
 
