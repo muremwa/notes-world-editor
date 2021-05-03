@@ -1,3 +1,10 @@
+
+
+/* 
+
+Editor function definations
+
+*/
 // available editor options
 const _actionFuncs = {
     header: (txt = 'HEADER', lvl = 1) => {
@@ -108,38 +115,20 @@ const _actions = new Map ([
     ['s-code', ((txt = '') => _actionFuncs.code(txt, false))],
     ['bullets', ((txt = '') => _actionFuncs.list(txt))],
     ['numbers', ((txt = '') => _actionFuncs.list(txt, true))],
-    ['link', ((txt = 'LINK', to = '#', title = '') => `[${txt}](${to}${title? ' ' + title: ''})`)],
-    ['image', ((altTxt = '', src = '', title = '') => `[${altTxt}](${src}${title? ' ' + title: ''})`)],
-    ['line', (() => "- - -")]
+    ['link', '[Text](link title)'],
+    ['image', '![altText](src title)'],
+    ['line', '- - -\n']
 ].concat(Array.from(Array(6), (_, i) => ++i).map((h) => {
     return [`h${h}`, ((txt = '') => _actionFuncs.header(txt, h))];
 })))
+// last line adds h1 - h6 progmatically
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* 
+    Editor caret selecetion and text input
+*/
 const edt = document.getElementById('note-edit');
 
 
@@ -155,10 +144,33 @@ function insertText (newText = '', wh = edt, pos = getCursorPos()) {
     const og = wh.value;
     wh.value = og.substring(0, pos.start) + newText + og.substring(pos.end);
     wh.selectionStart = pos.start;
-    wh.selectionEnd = pos.end;
+    wh.selectionEnd = pos.start + newText.length;
+    edt.focus();
 };
 
 
+/* 
+    Listen for actions
+*/
 
+[...document.getElementsByClassName('shortcut-item')].forEach((shortcut) => {
+    const short = shortcut.dataset.short;
+
+    if (_actions.has(short)) {
+        if (['link', 'image', 'line'].includes(short)) {
+            shortcut.addEventListener('click', () => insertText(_actions.get(short)));
+        } else {
+            shortcut.addEventListener('click', (e) => {
+                const nt = getTextAtPos();
+                const ntt = _actions.get(short)(nt);
+                insertText(ntt);
+            });
+        }
+
+    };
+
+
+
+});
 
 
