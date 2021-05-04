@@ -179,11 +179,11 @@ const getCursorPos = (editor = edt) => ({start: editor.selectionStart, end: edit
 const getTextAtPos = (pos = getCursorPos(), txt = edt.value) => txt.substring(pos.start, pos.end);
 
 // insert text to editor
-function insertText (newText = '', wh = edt, pos = getCursorPos()) {
+function insertText (newText = '', focus = true, wh = edt, pos = getCursorPos()) {
     const og = wh.value;
     wh.value = og.substring(0, pos.start) + newText + og.substring(pos.end);
-    wh.selectionStart = pos.start;
-    wh.selectionEnd = pos.start + newText.length;
+    wh.selectionStart = focus? pos.start: pos.start + newText.length;
+    wh.selectionEnd = pos.start + newText.length
     edt.focus();
 };
 
@@ -208,6 +208,14 @@ function insertText (newText = '', wh = edt, pos = getCursorPos()) {
 
     };
 
+});
+
+// let tab key add 4 spaces
+edt.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab') {
+        event.preventDefault();
+        insertText('    ', false);
+    };
 });
 
 
