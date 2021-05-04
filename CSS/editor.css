@@ -41,5 +41,16 @@
     margin-top: 1em;
     width: 80%;
     min-height: 60vh;
+    font-size: 10.5px;
+}
+
+#s-c-c {
+    margin-top: 40%;
+    margin-left: 3em;
+}
+
+#f-size {
+    width: 8em;
+    height: 4em;
 }
 
