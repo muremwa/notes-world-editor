@@ -266,3 +266,31 @@ edt.addEventListener('keydown', (event) => {
 });
 
 
+/* 
+    font size control
+*/
+const sizeX = document.getElementById('f-size');
+
+if (sizeX) {
+    const changeFontSize = (newValue, wh = edt, h = sizeX) => {
+        const nv = +newValue;
+
+        if (nv !== NaN && ((6 < nv) && (nv < 20))) {
+            wh.style.fontSize = `${nv}px`;
+            h.value = nv;
+        };
+    };
+
+    sizeX.addEventListener('change', (event) => {
+        event.preventDefault();
+        changeFontSize(event.target.value);
+    })
+
+    sizeX.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            changeFontSize(event.target.value);
+        }
+    });
+
+};
