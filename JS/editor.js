@@ -216,6 +216,53 @@ edt.addEventListener('keydown', (event) => {
         event.preventDefault();
         insertText('    ', false);
     };
+
+    if (event.ctrlKey) {
+        switch (event.key) {
+            // bold
+            case 'b':
+                event.preventDefault();
+                if (getTextAtPos() !== '') {
+                    insertText(_actions.get('bold')(getTextAtPos()));
+                };
+                break;
+
+            // italicize
+            case 'i':
+                event.preventDefault();
+                if (getTextAtPos() !== '') {
+                    insertText(_actions.get('italic')(getTextAtPos()));
+                };
+                break;
+
+            // strike through
+            case 'q':
+                event.preventDefault();
+                if (getTextAtPos() !== '') {
+                    insertText(_actions.get('strike')(getTextAtPos()));
+                };
+                break;
+
+            // insert link
+            case '.':
+                event.preventDefault();
+                if (getTextAtPos() === '') {
+                    insertText(_actions.get('link'), false)
+                };
+                break;
+
+            // add insert image
+            case '/':
+                event.preventDefault();
+                if (getTextAtPos() === '') {
+                    insertText(_actions.get('image'), false);
+                };
+                break;
+        
+            default:
+                break;
+        }
+    };
 });
 
 
