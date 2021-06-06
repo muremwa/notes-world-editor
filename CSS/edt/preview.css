@@ -8,4 +8,9 @@
     min-height: 70vh;
     margin: 1em 1em 1em 1em;
     padding: 0.3em;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
 }
