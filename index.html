@@ -34,12 +34,17 @@
             <hr>
 
             <div id="editor-grp">
-                <ul class="nav nav-tabs">
+                <ul id="nav-tabs-sec" class="nav nav-tabs">
+                    <!-- The ids of the anchor tags should never start with the same letter ever! -->
                     <li class="nav-item">
                       <a class="nav-link tab-nav active" href="#" data-section-to="editor" data-section-from="" id="editor-open">Editor</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link tab-nav" href="#" data-section-to="preview" data-section-from="" id="preview-open">Preview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tab-nav" href="#" data-section-to="help" data-section-from="" id="help-open">Help</a>
                     </li>
                 </ul>
 
@@ -155,6 +160,11 @@
  
                 <div id="preview" class="editor-tab">
                     <div id="js-preview-window"></div>
+                </div>
+
+                <div id="help" class="editor-tab">
+                    <h2>Help</h2>
+                    <p>This is the help section of the editor shall be populated automatically</p>
                 </div>
             </div>
 
