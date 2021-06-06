@@ -19,6 +19,10 @@ form {
     margin-bottom: 10em;
 }
 
+blockquote {
+    border-left: 1px solid darkslategrey;
+}
+
 blockquote > p {
     padding-left: 1em;
     font-weight: bold;
@@ -26,6 +30,10 @@ blockquote > p {
 
 #s-section {
     padding: 3em 0 3em 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 @media screen and (max-width: 450px) {

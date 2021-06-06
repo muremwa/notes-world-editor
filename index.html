@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/dep/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/edt/default.css" type="text/css">
     <link rel="stylesheet" href="css/edt/editor.css" type="text/css">
+    <link rel="stylesheet" href="css/edt/preview.css" type="text/css">
 </head>
 <body>
 
@@ -35,10 +36,10 @@
             <div id="editor-grp">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                      <a class="nav-link tab-nav active" href="#" data-section-to="editor" data-section-from="">Editor</a>
+                      <a class="nav-link tab-nav active" href="#" data-section-to="editor" data-section-from="" id="editor-open">Editor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-nav" href="#" data-section-to="preview" data-section-from="">Preview</a>
+                        <a class="nav-link tab-nav" href="#" data-section-to="preview" data-section-from="" id="preview-open">Preview</a>
                     </li>
                 </ul>
 
@@ -169,6 +170,8 @@
     </div>
     
     <script src="JS/dep/bootstrap.bundle.min.js"></script>
+    <script src="JS/dep/marked.min.js"></script>
+    <script src="JS/edt/preview.js"></script>
     <script src="JS/edt/tabMaster.js"></script>
     <script src="JS/edt/editor.js"></script>
 </body>

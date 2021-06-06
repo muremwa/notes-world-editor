@@ -1,3 +1,7 @@
+/* 
+    Swith tabs around
+*/
+
 let activeLink; // hold the active link
 
 
