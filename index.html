@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NotesWorldEditor</title>    
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/default.css" type="text/css">
-    <link rel="stylesheet" href="css/editor.css" type="text/css">
+    <link rel="stylesheet" href="css/dep/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/edt/default.css" type="text/css">
+    <link rel="stylesheet" href="css/edt/editor.css" type="text/css">
 </head>
 <body>
 
@@ -44,94 +44,106 @@
 
                 <div id="editor" class="editor-tab editor-tab-active">
                     <div class="row sticky-top" id="shorcut-sections">
-                        <div class="btn-group shortcut-item-m">
-                            <img src="SVG/title.svg" alt="" title="Insert heading">
-                            <button type="button" class="btn form-control dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">view headings</span>
+
+                        <!-- Headings -->
+                        <div class="dropdown shortcut-item-m col">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="SVG/title.svg" alt="" title="Insert heading">
                             </button>
-                            <div class="dropdown-menu">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <span class="dropdown-item shortcut-item" data-short="h1">H1</span>
                                 <span class="dropdown-item shortcut-item" data-short="h2">H2</span>
                                 <span class="dropdown-item shortcut-item" data-short="h3">H3</span>
                                 <span class="dropdown-item shortcut-item" data-short="h4">H4</span>
                                 <span class="dropdown-item shortcut-item" data-short="h5">H5</span>
                                 <span class="dropdown-item shortcut-item" data-short="h6">H6</span>
-                            </div>
+                            </ul>
                         </div>
 
-                        <div class="sec-div"></div>
+                        <div class="sec-div col"></div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Bold text -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/bold.svg" alt="bold letter b" class="shortcut-item" data-short="bold" title="Bold text">
                         </div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Italic text -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/italic.svg" alt="italic letter i" class="shortcut-item" data-short="italic" title="Italicize text">
                         </div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Strikethrough -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/strikethrough.svg" alt="striked through t" class="shortcut-item" data-short="strike" title="Strike through text">
                         </div>
 
-                        <div class="sec-div"></div>
+                        <div class="sec-div col"></div>
 
-                        <div class="btn-group shortcut-item-m">
-                            <img src="SVG/case.svg" alt="" title="Insert heading">
-                            <button type="button" class="btn form-control dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">view cases</span>
+                        <!-- Text cases -->
+                        <div class="dropdown shortcut-item-m col" title="Insert heading">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="SVG/case.svg" alt="">
                             </button>
-                            <div class="dropdown-menu">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <span class="dropdown-item shortcut-item" data-short="case-u">UPPERCASE</span>
                                 <span class="dropdown-item shortcut-item" data-short="case-l">lower case</span>
                                 <span class="dropdown-item shortcut-item" data-short="case-s">Sentence case</span>
                                 <span class="dropdown-item shortcut-item" data-short="case-t">Title Case</span>
-                            </div>
+                            </ul>
                         </div>
 
-                        <div class="sec-div"></div>
+                        <div class="sec-div col"></div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Bullet list -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/list_bulleted.svg" alt="list bullets" class="shortcut-item" data-short="bullets" title="Insert bullet list">
                         </div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Numbered list -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/list_numbered.svg" alt="numbered list" class="shortcut-item" data-short="numbers" title="Insert numbered list">
                         </div>
 
-                        <div class="sec-div"></div>
+                        <div class="sec-div col"></div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Link -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/insert_link.svg" alt="chain icon" class="shortcut-item" data-short="link" title="Insert link">
                         </div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Insert image -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/insert_photo.svg" alt="image icon" class="shortcut-item" data-short="image" title="Insert image">
                         </div>
 
-                        <div class="sec-div"></div>
+                        <div class="sec-div col"></div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Add line -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/line.svg" alt="pen drawing" class="shortcut-item" data-short="line" title="Insert line">
                         </div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Quote -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/quote.svg" alt="quotation marks" class="shortcut-item" data-short="quote" title="Insert blockquote">
                         </div>
 
-                        <div class="sec-div"></div>
+                        <div class="sec-div col"></div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Single line code -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/code.svg" alt="Angle brackets" class="shortcut-item" data-short="s-code" title="Insert single line code">
                         </div>
 
-                        <div class="shortcut-item-m">
+                        <!-- Multiline code -->
+                        <div class="shortcut-item-m col">
                             <img src="SVG/code.svg" alt="Angle brackets" class="shortcut-item" data-short="code" title="Insert multiline code" style="transform: rotate(90deg);">
                         </div>
                     </div>
 
                     <div class="row">
-                        <textarea name="note" id="note-edit" cols="30" rows="10" class="form-control"></textarea>
-                        <div id="s-c">
+                        <textarea name="note" id="note-edit" cols="30" rows="10" class="form-control col-8"></textarea>
+                        <div id="s-c" class="col-4">
                             <div id="s-c-c">
                                 <label for="f-size">Change font size</label>
                                 <input type="number" step="1" value="10.5" name="f-size" id="f-size" class="form-control" max="20" min="6">
@@ -148,15 +160,14 @@
             <hr>
 
             <div class="row" id="s-section">
-                <input id="ogSubmit" type="submit" class="col-sm-3 btn-outline form-control" value="new note">
-                <span class="col-sm-5"></span>
-                <button id="second-btn" class="col-sm-3 btn-outline form-control" data-second-url="#">save and edit tags</button>
+                <input id="ogSubmit" type="submit" class="col btn-outline form-control" value="new note">
+                <span class="col"></span>
+                <button id="second-btn" class="col btn-outline form-control" data-second-url="#">save and edit tags</button>
             </div>
             
         </form>
     </div>
     
-    <script src="JS/dep/jquery.js"></script>
     <script src="JS/dep/bootstrap.bundle.min.js"></script>
     <script src="JS/edt/tabMaster.js"></script>
     <script src="JS/edt/editor.js"></script>
