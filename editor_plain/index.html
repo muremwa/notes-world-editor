@@ -151,8 +151,12 @@
                         <textarea name="note" id="note-edit" cols="30" rows="10" class="form-control col-8"></textarea>
                         <div id="s-c" class="col-4">
                             <div id="s-c-c">
-                                <label for="f-size">Change font size</label>
-                                <input type="number" step="1" value="10.5" name="f-size" id="f-size" class="form-control" max="20" min="6">
+                                <div class="dropdown" title="Insert heading">
+                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Change editor font size (<span id="f-size">14</span>)
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="editor-size-change"></ul>
+                                </div>
                             </div>
                         </div>
                     </div>

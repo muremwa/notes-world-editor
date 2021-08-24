@@ -1,5 +1,5 @@
-# Notes World Editor
-The markdown editor for [notes-world project](https://github.com/muremwa/notes-world) served [over here](https://notesworld.pythonanywhere.com/notes/new/note/).
+# Markdown Editor
+The markdown editor for [notes-world project](https://github.com/muremwa/notes-world) served [over here](https://notesworld.pythonanywhere.com/notes/new/note/). Or any other projects.
 
 - - -
 ## Info
