@@ -269,42 +269,21 @@ edt.addEventListener('keydown', (event) => {
 /* 
     font size control
 */
-// const sizeX = document.getElementById('f-size');
-
-// if (sizeX) {
-//     const changeFontSize = (newValue, wh = edt, h = sizeX) => {
-//         const nv = +newValue;
-
-//         if (nv !== NaN && ((6 < nv) && (nv < 20))) {
-//             wh.style.fontSize = `${nv}px`;
-//             h.value = nv;
-//         };
-//     };
-
-//     sizeX.addEventListener('change', (event) => {
-//         event.preventDefault();
-//         changeFontSize(event.target.value);
-//     })
-
-//     sizeX.addEventListener('keydown', (event) => {
-//         if (event.key === 'Enter') {
-//             event.preventDefault();
-//             changeFontSize(event.target.value);
-//         }
-//     });
-
-// };
-
-/* 
-    font size control
-*/
 const size = document.getElementById('editor-size-change');
 const sizeD = document.getElementById('f-size');
 const sizeDVal = parseInt(sizeD.innerText);
 let active = sizeDVal === NaN? 10: sizeDVal;
 let activeE;
 
-if (size && edt && sizeD) {
+if (size && edt && sizeD) {    
+    const changeFontSize = (newValue, wh = edt, h = sizeD) => {
+        const nv = +newValue;
+
+        if (nv !== NaN && ((6 < nv) && (nv < 21))) {
+            wh.style.fontSize = `${nv}px`;
+            h.innerText = nv;
+        };
+    };
 
     // creates a dropdown item with a specific number on the size changer
     const buildSize = (num = 7, home = size) => {
@@ -316,6 +295,7 @@ if (size && edt && sizeD) {
         if (num === active) {
             item_.classList.add('active');
             activeE = item_;
+            changeFontSize(num, edt, sizeD);
         };
 
         home.appendChild(item_)
@@ -323,15 +303,6 @@ if (size && edt && sizeD) {
 
     // create dropdown of sizes 7 to 20
     Array.from(Array(20 - 6), (_, i) => i + 7).forEach((n) => buildSize(n, size));
-    
-    const changeFontSize = (newValue, wh = edt, h = sizeD) => {
-        const nv = +newValue;
-
-        if (nv !== NaN && ((6 < nv) && (nv < 21))) {
-            wh.style.fontSize = `${nv}px`;
-            h.innerText = nv;
-        };
-    };
 
     [...document.getElementsByClassName('js-editor-size')].forEach((element) => {
         element.addEventListener('click', (event_) => {
