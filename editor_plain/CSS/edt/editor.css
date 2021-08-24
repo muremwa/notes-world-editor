@@ -10,6 +10,10 @@
     display: block;
 }
 
+.tab-nav {
+    cursor: pointer;
+}
+
 #shorcut-sections {
     border: 1px solid #dee2e6;
     width: max-content;
