@@ -168,7 +168,7 @@ const _actions = new Map ([
 /* 
     Editor caret selecetion and text input
 */
-const edt = document.getElementById('note-edit');
+const edt = document.getElementById('text-edit');
 
 
 // get the position of the cursor on the textarea
@@ -313,3 +313,27 @@ if (size && edt && sizeD) {
         });
     });
 };
+
+
+// make editor fullscreen
+const textHome = document.getElementById('editor-grp');
+const fullScreenToogle = document.getElementById('fullscreen-toogle');
+
+if (textHome && fullScreenToogle) {
+    fullScreenToogle.addEventListener('click', () => {
+        const fullScreenState = fullScreenToogle.dataset.state? parseInt(fullScreenToogle.dataset.state): null;
+        
+        if (fullScreenState === 1) {
+            fullScreenToogle.src = fullScreenToogle.dataset.enterIcon;
+            fullScreenToogle.dataset.state = 0;
+            fullScreenToogle.title = "Enter fullscreen"
+            textHome.classList.remove('fsx')
+        } else if (fullScreenState === 0) {
+            fullScreenToogle.src = fullScreenToogle.dataset.exitIcon;
+            fullScreenToogle.dataset.state = 1;
+            fullScreenToogle.title = "Exit fullscreen"
+            textHome.classList.add('fsx')
+        }
+    });
+};
+
