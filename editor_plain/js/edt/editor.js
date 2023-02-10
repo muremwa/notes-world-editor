@@ -317,7 +317,7 @@ if (size && edt && sizeD) {
 
 // make editor fullscreen
 const textHome = document.getElementById('editor-grp');
-const fullScreenToogle = document.getElementById('fullscreen-toogle');
+const fullScreenToogle = document.getElementById('fullscreen-toggle');
 
 if (textHome && fullScreenToogle) {
     fullScreenToogle.addEventListener('click', () => {

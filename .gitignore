@@ -2,3 +2,6 @@
 */dist/*
 */.cache/*
 *main.bundle.*
+
+.idea
+.vscode

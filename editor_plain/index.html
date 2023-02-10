@@ -14,7 +14,7 @@
 
     <div id="editor-home" class="container">
         <h2>new note</h2>
-        <form action="" method="">
+        <form method="post">
             <div class="row">
                 <div class="form-group col-sm-5">
                     <label for="title">Title</label>
@@ -49,7 +49,7 @@
                         </li>
                     </ul>
                     <span class="fullscreen-home col-md-2">
-                        <img title="Enter fullscreen" id="fullscreen-toogle" src="SVG/fullscreen.svg" data-enter-icon="SVG/fullscreen.svg" data-exit-icon="SVG/fullscreen_exit.svg" data-state="0">
+                        <img alt="icon to toggle to fullscreen" title="Enter fullscreen" id="fullscreen-toggle" src="svg/fullscreen.svg" data-enter-icon="SVG/fullscreen.svg" data-exit-icon="SVG/fullscreen_exit.svg" data-state="0">
                     </span>
                 </div>
 
@@ -59,15 +59,15 @@
                         <!-- Headings -->
                         <div class="dropdown shortcut-item-m col">
                             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="SVG/title.svg" alt="" title="Insert heading">
+                                <img src="svg/title.svg" alt="" title="Insert heading">
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <span class="dropdown-item shortcut-item" data-short="h1">H1</span>
-                                <span class="dropdown-item shortcut-item" data-short="h2">H2</span>
-                                <span class="dropdown-item shortcut-item" data-short="h3">H3</span>
-                                <span class="dropdown-item shortcut-item" data-short="h4">H4</span>
-                                <span class="dropdown-item shortcut-item" data-short="h5">H5</span>
-                                <span class="dropdown-item shortcut-item" data-short="h6">H6</span>
+                                <li class="dropdown-item shortcut-item" data-short="h1">H1</li>
+                                <li class="dropdown-item shortcut-item" data-short="h2">H2</li>
+                                <li class="dropdown-item shortcut-item" data-short="h3">H3</li>
+                                <li class="dropdown-item shortcut-item" data-short="h4">H4</li>
+                                <li class="dropdown-item shortcut-item" data-short="h5">H5</li>
+                                <li class="dropdown-item shortcut-item" data-short="h6">H6</li>
                             </ul>
                         </div>
 
@@ -75,31 +75,31 @@
 
                         <!-- Bold text -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/bold.svg" alt="bold letter b" class="shortcut-item" data-short="bold" title="Bold text">
+                            <img src="svg/bold.svg" alt="bold letter b" class="shortcut-item" data-short="bold" title="Bold text">
                         </div>
 
                         <!-- Italic text -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/italic.svg" alt="italic letter i" class="shortcut-item" data-short="italic" title="Italicize text">
+                            <img src="svg/italic.svg" alt="italic letter i" class="shortcut-item" data-short="italic" title="Italicize text">
                         </div>
 
                         <!-- Strikethrough -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/strikethrough.svg" alt="striked through t" class="shortcut-item" data-short="strike" title="Strike through text">
+                            <img src="svg/strikethrough.svg" alt="striked through t" class="shortcut-item" data-short="strike" title="Strike through text">
                         </div>
 
                         <div class="sec-div col"></div>
 
                         <!-- Text cases -->
                         <div class="dropdown shortcut-item-m col" title="Insert heading">
-                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="SVG/case.svg" alt="">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="svg/case.svg" alt="">
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <span class="dropdown-item shortcut-item" data-short="case-u">UPPERCASE</span>
-                                <span class="dropdown-item shortcut-item" data-short="case-l">lower case</span>
-                                <span class="dropdown-item shortcut-item" data-short="case-s">Sentence case</span>
-                                <span class="dropdown-item shortcut-item" data-short="case-t">Title Case</span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <li class="dropdown-item shortcut-item" data-short="case-u">UPPERCASE</li>
+                                <li class="dropdown-item shortcut-item" data-short="case-l">lower case</li>
+                                <li class="dropdown-item shortcut-item" data-short="case-s">Sentence case</li>
+                                <li class="dropdown-item shortcut-item" data-short="case-t">Title Case</li>
                             </ul>
                         </div>
 
@@ -107,48 +107,48 @@
 
                         <!-- Bullet list -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/list_bulleted.svg" alt="list bullets" class="shortcut-item" data-short="bullets" title="Insert bullet list">
+                            <img src="svg/list_bulleted.svg" alt="list bullets" class="shortcut-item" data-short="bullets" title="Insert bullet list">
                         </div>
 
                         <!-- Numbered list -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/list_numbered.svg" alt="numbered list" class="shortcut-item" data-short="numbers" title="Insert numbered list">
+                            <img src="svg/list_numbered.svg" alt="numbered list" class="shortcut-item" data-short="numbers" title="Insert numbered list">
                         </div>
 
                         <div class="sec-div col"></div>
 
                         <!-- Link -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/insert_link.svg" alt="chain icon" class="shortcut-item" data-short="link" title="Insert link">
+                            <img src="svg/insert_link.svg" alt="chain icon" class="shortcut-item" data-short="link" title="Insert link">
                         </div>
 
                         <!-- Insert image -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/insert_photo.svg" alt="image icon" class="shortcut-item" data-short="image" title="Insert image">
+                            <img src="svg/insert_photo.svg" alt="image icon" class="shortcut-item" data-short="image" title="Insert image">
                         </div>
 
                         <div class="sec-div col"></div>
 
                         <!-- Add line -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/line.svg" alt="pen drawing" class="shortcut-item" data-short="line" title="Insert line">
+                            <img src="svg/line.svg" alt="pen drawing" class="shortcut-item" data-short="line" title="Insert line">
                         </div>
 
                         <!-- Quote -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/quote.svg" alt="quotation marks" class="shortcut-item" data-short="quote" title="Insert blockquote">
+                            <img src="svg/quote.svg" alt="quotation marks" class="shortcut-item" data-short="quote" title="Insert blockquote">
                         </div>
 
                         <div class="sec-div col"></div>
 
                         <!-- Single line code -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/code.svg" alt="Angle brackets" class="shortcut-item" data-short="s-code" title="Insert single line code">
+                            <img src="svg/code.svg" alt="Angle brackets" class="shortcut-item" data-short="s-code" title="Insert single line code">
                         </div>
 
                         <!-- Multiline code -->
                         <div class="shortcut-item-m col">
-                            <img src="SVG/code.svg" alt="Angle brackets" class="shortcut-item" data-short="code" title="Insert multiline code" style="transform: rotate(90deg);">
+                            <img src="svg/code.svg" alt="Angle brackets" class="shortcut-item" data-short="code" title="Insert multiline code" style="transform: rotate(90deg);">
                         </div>
                     </div>
 
@@ -157,10 +157,10 @@
                         <div id="s-c" class="col-4">
                             <div id="s-c-c">
                                 <div class="dropdown" title="Insert heading">
-                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                                         Change editor font size (<span id="f-size">14</span>)
                                     </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="editor-size-change"></ul>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3" id="editor-size-change"></ul>
                                 </div>
                             </div>
                         </div>
@@ -188,10 +188,10 @@
         </form>
     </div>
     
-    <script src="JS/dep/bootstrap.bundle.min.js"></script>
-    <script src="JS/dep/marked.min.js"></script>
-    <script src="JS/edt/preview.js"></script>
-    <script src="JS/edt/tabMaster.js"></script>
-    <script src="JS/edt/editor.js"></script>
+    <script src="js/dep/bootstrap.bundle.min.js"></script>
+    <script src="js/dep/marked.min.js"></script>
+    <script src="js/edt/preview.js"></script>
+    <script src="js/edt/tabMaster.js"></script>
+    <script src="js/edt/editor.js"></script>
 </body>
 </html>
