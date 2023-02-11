@@ -8,7 +8,7 @@
  * @return { string }
  * */
 function removeSubmit(parsedText) {
-    const buttonExp = new RegExp(/<button.*?<\/button>/, 'g');
+    const buttonExp = new RegExp(/<button.*?>\w*<\/button>/, 'g');
     const newBtns = [];
     let finalText = parsedText;
 
