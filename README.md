@@ -21,7 +21,3 @@ Has support for keyboard shorcuts for bolding and italicizing.
 > The preview sections
 
 An additional Help section is included that is populated dynamically
-
-- - -
-## Future 
-The editor shall be rewritten using web components.
